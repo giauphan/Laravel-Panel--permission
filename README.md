@@ -20,3 +20,12 @@ php artisan serve
 port 8000 : http://localhost:8000
 on cpanel : http://localhost:8000/admin 
 
+# Create branch
+Change ``branch_name`` to Name my task
+
+```
+git checkout -b Branch_Name
+```
+
+and push code to github
+

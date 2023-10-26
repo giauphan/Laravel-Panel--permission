@@ -21,5 +21,12 @@ class UserSeed extends Seeder
         ]);
         $role = Role::updateOrCreate(['name' => 'Admin']);
         $user->assignRole($role);
+
+        $ctv = User::create([
+            'name' => 'ctv',
+            'email' => 'ctv@example.com',
+            'password' => Hash::make('12345678'),
+        ]);
+        $ctv->assignRole('ctv');
     }
 }
