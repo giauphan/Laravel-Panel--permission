@@ -12,7 +12,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends  Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory,HasRoles, Notifiable;
 
@@ -46,6 +46,7 @@ class User extends  Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
     public function canAccessPanel(Panel $panel): bool
     {
         // Check if user has permission for $panel
