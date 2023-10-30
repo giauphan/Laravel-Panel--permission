@@ -21,7 +21,7 @@
     </title>
 
     {{ \Filament\Support\Facades\FilamentView::renderHook('panels::styles.before') }}
-  
+   
 
     <style>
         [x-cloak=''],
