@@ -17,7 +17,11 @@ jobs:
         with:
           bun-version: latest
       - name: install mongodb
-        run: sudo pecl install mongodb
+        run: | 
+        sudo apt-get install php8.1-dev make php-pear
+        sudo pecl install mongodb
+        sudo echo "extension=mongo.so" | sudo tee /etc/php8.1/mods-available/mongo.ini
+        
 
       - name: Install dependencies
         run: |
