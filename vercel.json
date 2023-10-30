@@ -12,15 +12,15 @@
             "dest": "/api/index.php"
         },
         {
-            "src": "/public/js/*/(.*)",
+            "src": "/js/*/(.*)",
             "dest": "/public/js"
         },
         {
-            "src": "/public/js/*/*/(.*)",
+            "src": "/js/*/*/(.*)",
             "dest": "/public/js"
         },
         {
-            "src": "/public/css/*/(.*)",
+            "src": "/css/*/(.*)",
             "dest": "/public/css"
         }
     ],
