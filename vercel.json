@@ -12,11 +12,11 @@
             "dest": "/api/index.php"
         },
         {
-            "src": "/public(.)",
+            "src": "/public(.*)",
             "dest": "/public/css/"
         },
         {
-            "src": "/public(.)",
+            "src": "/public(.*)",
             "dest": "/public/js/"
         }
     ],
