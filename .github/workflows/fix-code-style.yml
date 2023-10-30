@@ -18,7 +18,7 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          sudo apt-get install php8.1-dev make php-pear
+          sudo apt-get install php8.1-mongodb make php-pear
           sudo pecl install mongodb
           sudo echo "extension=mongo.so" | sudo tee /etc/php8.1/mods-available/mongo.ini
           composer install --no-interaction
