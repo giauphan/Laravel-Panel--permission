@@ -8,16 +8,16 @@
     },
     "routes": [
         {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        },
+        {
             "src": "/public(.)",
             "dest": "/public/css/"
         },
         {
             "src": "/public(.)",
             "dest": "/public/js/"
-        },
-        {
-            "src": "/(css|js|vendor|assets|build)/(.*)",
-            "dest": "public/$1/$2"
         }
     ],
     "env": {
