@@ -21,8 +21,6 @@ jobs:
         sudo apt-get install php8.1-dev make php-pear
         sudo pecl install mongodb
         sudo echo "extension=mongo.so" | sudo tee /etc/php8.1/mods-available/mongo.ini
-        
-
       - name: Install dependencies
         run: |
           composer install --no-interaction
