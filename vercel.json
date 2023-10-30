@@ -22,8 +22,8 @@
     ],
     "rewrites": [
         {
-            "source": "/css/*/*/(.*)",
-            "destination": "/public/css/*/*/(.*)"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ],
     "env": {
