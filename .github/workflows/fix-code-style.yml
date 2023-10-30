@@ -16,6 +16,9 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
+      - name: install mongodb
+        run: sudo pecl install mongodb
+
       - name: Install dependencies
         run: |
           composer install --no-interaction
