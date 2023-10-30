@@ -15,7 +15,6 @@ class RoleSeed extends Seeder
         Role::create([
             'name' => 'ctv',
             'guard_name' => config('auth.defaults.guard'),
-
         ]);
     }
 }
