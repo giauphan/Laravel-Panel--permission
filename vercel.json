@@ -18,15 +18,15 @@
             "dest": "/public/js/"
         },
         {
-            "src": "/css/*/(.*)",
+            "src": "/css/*/*/(.*)",
             "dest": "/public/css/"
         },
         {
-            "src": "/css/*/(.*)",
+            "src": "/css/*/*/(.*)",
             "dest": "/public/"
         },
         {
-            "src": "/public/css/*/(.*)",
+            "src": "/public/css/*/*/(.*)",
             "dest": "/public/"
         }
     ],
