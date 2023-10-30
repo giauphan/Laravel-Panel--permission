@@ -12,17 +12,15 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          bun-version: latest
-      - name: install mongodb
-        run: | 
-        sudo apt-get install php8.1-dev make php-pear
-        sudo pecl install mongodb
-        sudo echo "extension=mongo.so" | sudo tee /etc/php8.1/mods-available/mongo.ini
+          python-version: '3.x'
       - name: Install dependencies
         run: |
+          sudo apt-get install php8.1-dev make php-pear
+          sudo pecl install mongodb
+          sudo echo "extension=mongo.so" | sudo tee /etc/php8.1/mods-available/mongo.ini
           composer install --no-interaction
           bun install
       - name: Run Pint
