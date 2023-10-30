@@ -3,7 +3,6 @@
 namespace App\Policies;
 
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class UserPolic
 {
@@ -12,7 +11,7 @@ class UserPolic
      */
     public function viewAny(User $user): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -20,7 +19,7 @@ class UserPolic
      */
     public function view(User $user, User $model): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -28,7 +27,7 @@ class UserPolic
      */
     public function create(User $user): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -36,7 +35,7 @@ class UserPolic
      */
     public function update(User $user, User $model): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -44,7 +43,7 @@ class UserPolic
      */
     public function delete(User $user, User $model): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -52,7 +51,7 @@ class UserPolic
      */
     public function restore(User $user, User $model): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 
     /**
@@ -60,6 +59,6 @@ class UserPolic
      */
     public function forceDelete(User $user, User $model): bool
     {
-           return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin']);
     }
 }
