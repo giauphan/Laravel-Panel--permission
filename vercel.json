@@ -12,7 +12,7 @@
         },
         {
             "src": "/(css|js|images)/(.*)",
-            "dest": "public/$1/$2"
+            "dest": "/public/$1/$2"
         }
     ],
    
