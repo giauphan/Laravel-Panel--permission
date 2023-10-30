@@ -11,23 +11,15 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         },
-
-        
         {
-            "src": "/(*)/(*)/(.*)",
-            "dest": "/public/js/"
+            "src": "/public/js/*/*/(.*)",
+            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
+            "continue": true
         },
         {
-            "src": "/*/*/(.*)",
-            "dest": "/public/css/"
-        },
-        {
-            "src": "/*/*/(.*)",
-            "dest": "/public/"
-        },
-        {
-            "src": "/css/(*)/(*)/(.*)",
-            "dest": "/public/"
+            "src": "/public/js/*/*/(.*)",
+            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
+            "continue": true
         }
     ],
     "env": {
