@@ -11,17 +11,23 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         },
-        {
-            "src": "/js/*/(.*)",
-            "dest": "/public/js"
-        },
+
+        
         {
             "src": "/js/*/*/(.*)",
-            "dest": "/public/js"
+            "dest": "/public/js/"
         },
         {
             "src": "/css/*/(.*)",
-            "dest": "/public/css"
+            "dest": "/public/css/"
+        },
+        {
+            "src": "/css/*/(.*)",
+            "dest": "/public/"
+        },
+        {
+            "src": "/public/css/*/(.*)",
+            "dest": "/public/"
         }
     ],
     "env": {
