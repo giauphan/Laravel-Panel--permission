@@ -14,19 +14,19 @@
 
         
         {
-            "src": "/js/*/*/(.*)",
+            "src": "/*/*/(.*)",
             "dest": "/public/js/"
         },
         {
-            "src": "/css/*/*/(.*)",
+            "src": "/*/*/(.*)",
             "dest": "/public/css/"
         },
         {
-            "src": "/css/*/*/(.*)",
+            "src": "/*/*/(.*)",
             "dest": "/public/"
         },
         {
-            "src": "/public/css/*/*/(.*)",
+            "src": "/css/*/*/(.*)",
             "dest": "/public/"
         }
     ],
