@@ -20,6 +20,12 @@
             "dest": "/public/css/"
         }
     ],
+    "rewrites": [
+        {
+            "source": "/css/*/*/(.*)",
+            "destination": "/public/css/*/*/(.*)"
+        }
+    ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
