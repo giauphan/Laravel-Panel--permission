@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ImportsProductResource\Pages;
-use App\Filament\Resources\ImportsProductResource\RelationManagers;
 use App\Models\ImportsProduct;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
@@ -11,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ImportsProductResource extends Resource
 {
@@ -25,10 +22,10 @@ class ImportsProductResource extends Resource
         return $form
             ->schema([
                 Select::make('SKU')
-                ->relationship('category', 'SKU')
-                ->multiple()
-                ->preload(),
-              
+                    ->relationship('category', 'SKU')
+                    ->multiple()
+                    ->preload(),
+
                 Forms\Components\DateTimePicker::make('entry_date')
                     ->required(),
                 Forms\Components\TextInput::make('quantity')
@@ -79,14 +76,14 @@ class ImportsProductResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -94,5 +91,5 @@ class ImportsProductResource extends Resource
             'create' => Pages\CreateImportsProduct::route('/create'),
             'edit' => Pages\EditImportsProduct::route('/{record}/edit'),
         ];
-    }    
+    }
 }

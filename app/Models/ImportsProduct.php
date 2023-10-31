@@ -9,14 +9,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class ImportsProduct extends Model
 {
     use HasFactory;
+
     protected $casts = [
         'category_id' => categoryProduct::class,
         'entry_date' => 'dateTime',
         'quantity' => 'int',
-        'expiration_date' => 'dateTime'
+        'expiration_date' => 'dateTime',
     ];
-   
-    public function category() : BelongsTo {
+
+    public function category(): BelongsTo
+    {
         return $this->belongsTo(CategoryProduct::class);
     }
 }

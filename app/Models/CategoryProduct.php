@@ -16,6 +16,6 @@ class CategoryProduct extends Model
 
     protected $fillable = [
         'name',
-        'SKU'
+        'SKU',
     ];
 }
