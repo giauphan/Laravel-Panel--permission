@@ -6,7 +6,9 @@
         {
             "src": "/api/index.php",
             "use": "vercel-php@0.6.0"
-        }
+        },
+        { "src": "/public/css/", "use": "@vercel/static" },
+        { "src": "/public/js/", "use": "@vercel/static" }
     ],
     "routes": [
         {
@@ -15,7 +17,11 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/public/$1"
+            "dest": "/public/css/"
+          },
+          {
+            "src": "/(.*)",
+            "dest": "/public/js/"
           }
     ],
     "env": {
