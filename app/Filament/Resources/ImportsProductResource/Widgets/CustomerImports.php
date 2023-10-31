@@ -10,7 +10,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 class CustomerImports extends BaseWidget
 {
     use InteractsWithPageTable;
-    
+
     protected function getStats(): array
     {
         return [

@@ -5,7 +5,6 @@ namespace App\Filament\Resources\ImportsProductResource\Pages;
 use App\Filament\Resources\ImportsProductResource;
 use App\Filament\Resources\ImportsProductResource\Widgets\CustomerImports;
 use Filament\Actions;
-use Filament\Pages\Concerns\ExposesTableToWidgets;
 use Filament\Resources\Pages\ListRecords;
 
 class ListImportsProducts extends ListRecords
@@ -18,6 +17,7 @@ class ListImportsProducts extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
     protected function getHeaderWidgets(): array
     {
         return [

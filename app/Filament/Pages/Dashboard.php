@@ -2,14 +2,15 @@
 
 namespace App\Filament\Pages;
 
-use Filament\Pages\Page;
 use Filament\Panel;
 
 class Dashboard extends \Filament\Pages\Dashboard
 {
     protected static ?string $title = 'Finance dashboard';
+
     protected static string $routePath = 'finance';
-    public function getColumns(): int | string | array
+
+    public function getColumns(): int|string|array
     {
         return 2;
     }
