@@ -3,13 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ImportsProductResource\Pages;
+use App\Filament\Resources\ImportsProductResource\RelationManagers;
 use App\Models\ImportsProduct;
 use Filament\Forms;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ImportsProductResource extends Resource
 {
@@ -21,17 +23,17 @@ class ImportsProductResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('SKU')
+                Forms\Components\Select::make('category_id')
                     ->relationship('category', 'SKU')
-                    ->multiple()
-                    ->preload(),
-
-                Forms\Components\DateTimePicker::make('entry_date')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+                Forms\Components\DatePicker::make('entry_date')
                     ->required(),
                 Forms\Components\TextInput::make('quantity')
                     ->required()
                     ->numeric(),
-                Forms\Components\DateTimePicker::make('expiration_date')
+                Forms\Components\DatePicker::make('expiration_date')
                     ->required(),
             ]);
     }
@@ -40,17 +42,21 @@ class ImportsProductResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('category_id')
+                Tables\Columns\TextColumn::make('category.SKU')
                     ->numeric()
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('entry_date')
-                    ->dateTime()
+                    ->date()
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('quantity')
                     ->numeric()
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('expiration_date')
-                    ->dateTime()
+                    ->date()
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

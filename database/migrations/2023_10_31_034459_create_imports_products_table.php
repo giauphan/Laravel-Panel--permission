@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create('imports_products', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(CategoryProduct::class, 'category_id')->index();
-            $table->dateTime('entry_date');
+            $table->date('entry_date');
             $table->integer('quantity');
-            $table->dateTime('expiration_date');
+            $table->date('expiration_date');
             $table->timestamps();
         });
     }

@@ -1,24 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ImportsProduct extends Model
 {
-    use HasFactory;
+    protected $guarded = [];
 
     protected $casts = [
-        'category_id' => CategoryProduct::class,
-        'entry_date' => 'dateTime',
+        'entry_date' => 'datetime',
         'quantity' => 'int',
-        'expiration_date' => 'dateTime',
+        'expiration_date' => 'datetime',
     ];
+
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(CategoryProduct::class);
+        return $this->belongsTo(CategoryProduct::class,'category_id');
     }
 }
