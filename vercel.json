@@ -14,9 +14,9 @@
             "dest": "/api/index.php"
         },
         {
-            "src": "/(css|js|images)/(.*)",
-            "dest": "/public/$1/$2"
-        }
+            "src": "/(.*)",
+            "dest": "/public/$1"
+          }
     ],
     "env": {
         "APP_ENV": "production",
