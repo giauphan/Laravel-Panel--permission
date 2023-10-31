@@ -11,7 +11,7 @@ class ImportsProduct extends Model
     use HasFactory;
 
     protected $casts = [
-        'category_id' => categoryProduct::class,
+        'category_id' => CategoryProduct::class,
         'entry_date' => 'dateTime',
         'quantity' => 'int',
         'expiration_date' => 'dateTime',
