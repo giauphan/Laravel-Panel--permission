@@ -5,7 +5,6 @@
         {
             "src": "/api/index.php",
             "use": "vercel-php@0.6.0",
-            "dev": true,
             "command": "php artisan serve"
         }
     ],
