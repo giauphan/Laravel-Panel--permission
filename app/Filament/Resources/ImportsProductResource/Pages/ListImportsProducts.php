@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ImportsProductResource\Pages;
 
 use App\Filament\Resources\ImportsProductResource;
+use App\Filament\Resources\ImportsProductResource\Widgets\CustomerImports;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
@@ -14,6 +15,13 @@ class ListImportsProducts extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            CustomerImports::class,
         ];
     }
 }
