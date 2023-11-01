@@ -1,4 +1,4 @@
-name: fix-code-style
+name: fix-code-style-mongodb
 
 on:
   push:
@@ -12,14 +12,16 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           ref: ${{ github.head_ref }}
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
-          bun-version: latest
+          php-version: '8.2'
       - name: Install dependencies
         run: |
+          sudo add-apt-repository ppa:ondrej/php
+          sudo apt update
+          sudo apt-get install php-mongodb
           composer install --no-interaction
-          bun install
       - name: Run Pint
         run: ./vendor/bin/pint
       - name: Pull changes
